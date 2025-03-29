@@ -168,6 +168,6 @@ if user_input:
         st.error("Failed to process the query after multiple attempts.")
 
 
-    st.sesseion_state.messages.append({"role": "assisstant", "content": full_response})
+    st.session_state.messages.append({"role": "assisstant", "content": full_response})
     st.session_state.chat_history.append(("ai", full_response))
 
