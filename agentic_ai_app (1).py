@@ -109,7 +109,7 @@ def reset():
 col1, col2 = st.columns([8,1])
 
 with col1:
-  st.title(" ⛧ 🩻 🌀  My Web ˖°. 🌀 🩻  ⛧ ")
+  st.title(" ⛧ 🩻 🌀  Motuu's Web ˖°. 🌀 🩻  ⛧ ")
   st.markdown("I am a genie and u have only 3 wishes to make, Choose wisely!!!")
 
 with col2:
