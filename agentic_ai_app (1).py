@@ -106,10 +106,10 @@ def reset():
 
 # """STREAMLIT APP SETUP"""
 
-col1, col2 = st.columns([8,2])
+col1, col2 = st.columns([8,1])
 
 with col1:
-  st.title(" ⛧ — 🩻 🌀  My Web ˖°. 🌀 🩻  — ⛧ ")
+  st.title(" ⛧ 🩻 🌀  My Web ˖°. 🌀 🩻  ⛧ ")
   st.markdown("Ask Me!!!")
 
 with col2:
