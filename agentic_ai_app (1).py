@@ -19,9 +19,9 @@ import os
 
 # pip install -U langchain-community langgraph langchain-tavily-python langgraph-checkpoint-sqlite
 
-!pip install -r requirements.txt
+# !pip install -r requirements.txt
 
-!pip install langgraph-checkpoint-sqlite
+# !pip install langgraph-checkpoint-sqlite
 
 from langchain_community.tools.tavily_search import TavilySearchResults
 from langgraph.checkpoint.memory import MemorySaver
