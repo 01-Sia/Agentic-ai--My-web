@@ -30,7 +30,7 @@ from langchain.prompts import ChatPromptTemplate,MessagesPlaceholder
 from langchain_groq import ChatGroq
 from langchain_experimental.utilities import PythonREPL
 
-"""Python REPL"""
+# """Python REPL"""
 
 import os
 os.environ['TAVILY_API_KEY'] = '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'
@@ -45,7 +45,7 @@ repl_tool = Tool(
     func = python_repl.run,
 )
 
-"""LLM initialization"""
+# """LLM initialization"""
 
 llm = ChatGroq(
     model = 'llama-3.3-70b-versatile',
@@ -56,7 +56,7 @@ llm = ChatGroq(
     api_key = os.getenv('GROQ_API_KEY'),
 )
 
-"""Chat prompt Template and the memory of chats"""
+# """Chat prompt Template and the memory of chats"""
 
 prompt_template = ChatPromptTemplate.from_messages(
     [
@@ -68,7 +68,7 @@ prompt_template = ChatPromptTemplate.from_messages(
 
 )
 
-"""Tools"""
+# """Tools"""
 
 tools=[search_tool,repl_tool]
 
@@ -79,7 +79,7 @@ if "session_id" not in st.session_state:
 
 agent = create_tool_calling_agent(llm, tools, prompt_template)
 
-"""Memory initialization"""
+# """Memory initialization"""
 
 if 'memory' not in st.session_state:
   st.session_state.memory = MemorySaver()
@@ -87,7 +87,7 @@ if 'memory' not in st.session_state:
 if 'agent_executor' not in st.session_state:
   st.session_state.agent_executor = AgentExecutor(agent=agent , tools = tools, checkpoint = st.session_state.memory)
 
-"""initialize chat history"""
+# """initialize chat history"""
 
 if 'messages' not in st.session_state:
   st.session_state.messages = []
@@ -95,7 +95,7 @@ if 'messages' not in st.session_state:
 if 'chat_history' not in st.session_state:
   st.session_state.chat_history = []
 
-"""Reset Function"""
+# """Reset Function"""
 
 def reset():
   st.session_state.messages = []
@@ -104,7 +104,7 @@ def reset():
   st.session_state.memory = MemorySaver()
   st.session_state.agent_executor = AgentExecutor(agent=agent , tools = tools, checkpoint = st.session_state.memory)
 
-"""STREAMLIT APP SETUP"""
+# """STREAMLIT APP SETUP"""
 
 col1, col2 = st.columns([8,2])
 
@@ -122,7 +122,7 @@ for i, message in enumerate(st.session_state.messages):
   with st.chat_message(message["role"]):
     st.markdown(message["content"])
 
-"""#Accepts user input"""
+# """#Accepts user input"""
 
 user_input = st.chat_input("What do u wanna know about?")
 
