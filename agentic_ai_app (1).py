@@ -19,7 +19,7 @@ import os
 
 # pip install -U langchain-community langgraph langchain-tavily-python langgraph-checkpoint-sqlite
 
-pip install -r requirements.txt
+!pip install -r requirements.txt
 
 !pip install langgraph-checkpoint-sqlite
 
